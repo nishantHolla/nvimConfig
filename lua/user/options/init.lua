@@ -9,6 +9,7 @@ options.list = {
   ignorecase = true,
   number = true,
   shiftwidth = 2,
+  showmode = false,
   signcolumn = 'yes',
   swapfile = false,
   tabstop = 2,
