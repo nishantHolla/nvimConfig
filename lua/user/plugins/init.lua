@@ -39,7 +39,7 @@ plugins.list = {
     'akinsho/bufferline.nvim',
     enabled = true,
     hasConfig = true,
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = {'nvim-tree/nvim-web-devicons'},
     description = 'Bufferline plugin',
   },
 
@@ -62,6 +62,21 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     description = 'Motion plugin',
+  },
+
+  telescope = {
+    'nvim-telescope/telescope.nvim',
+    enabled = true,
+    hasConfig = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+      },
+    },
+    description = 'Search plugin',
   },
 
 }

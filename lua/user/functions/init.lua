@@ -14,5 +14,13 @@ functions.closeBuffer = function()
 
 end
 
+functions.openTelescope = function(picker)
+  if NvimConfig.plugins.list.telescope.enabled == false then
+    return
+  end
+
+  vim.cmd('Telescope ' .. picker .. ' theme=ivy')
+end
+
 
 return functions

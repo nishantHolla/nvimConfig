@@ -55,6 +55,11 @@ keymaps.list.normal = {
     {'F', 'f', snr, 'Default find'},
   },
 
+  TelescopePlugin = {
+    plugin = 'telescope',
+    {'<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', snr, 'Open telescope'},
+  },
+
 }
 
 keymaps.list.insert = {
