@@ -39,7 +39,15 @@ plugins.list = {
     'akinsho/bufferline.nvim',
     enabled = true,
     hasConfig = true,
+    dependencies = 'nvim-tree/nvim-web-devicons',
     description = 'Bufferline plugin',
+  },
+
+  indentline = {
+    'lukas-reineke/indent-blankline.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Indent lines plugin'
   },
 
   treesitter = {
