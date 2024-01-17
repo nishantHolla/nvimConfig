@@ -1,5 +1,4 @@
-
-local actions = require("telescope.actions")
+local actions = require('telescope.actions')
 
 require('telescope').setup({
   defaults = {
@@ -10,14 +9,14 @@ require('telescope').setup({
         ['<a-l>'] = actions.select_default,
         ['<a-h>'] = actions.close,
         ['<a-;>'] = actions.select_horizontal,
-        ["<a-:>"] = actions.select_vertical,
+        ['<a-:>'] = actions.select_vertical,
         ['f<space>'] = actions.toggle_selection,
         ['<a-a>'] = actions.preview_scrolling_left,
         ['<a-s>'] = actions.preview_scrolling_down,
         ['<a-d>'] = actions.preview_scrolling_up,
         ['<a-f>'] = actions.preview_scrolling_right,
-      }
-    }
+      },
+    },
   },
 })
 

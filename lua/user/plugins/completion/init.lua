@@ -17,15 +17,15 @@ cmp.setup({
     ['<a-e>'] = cmp.mapping.abort(),
     ['<a-j>'] = cmp.mapping.select_next_item(),
     ['<a-k>'] = cmp.mapping.select_prev_item(),
-    ['<a-l>'] = cmp.mapping.confirm({ select = true }),
+    ['<a-;>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = "path" },
+    { name = 'path' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.filetype('gitcommit', {
@@ -33,24 +33,24 @@ cmp.setup.filetype('gitcommit', {
     { name = 'git' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
-    { name = 'cmdline' }
-  })
+    { name = 'cmdline' },
+  }),
 })
 
 require('user.plugins.lsp')
-require("luasnip.loaders.from_vscode").lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()

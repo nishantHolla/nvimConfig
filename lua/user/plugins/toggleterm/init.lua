@@ -1,4 +1,3 @@
-
-require("toggleterm").setup({
+require('toggleterm').setup({
   direction = 'horizontal',
 })

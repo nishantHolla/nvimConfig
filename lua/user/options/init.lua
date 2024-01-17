@@ -18,11 +18,9 @@ options.list = {
 }
 
 options.set = function()
-
   for key, value in pairs(options.list) do
     vim.opt[key] = value
   end
-
 end
 
 return options

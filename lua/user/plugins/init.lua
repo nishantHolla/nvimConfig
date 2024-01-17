@@ -1,14 +1,14 @@
 -- Plugins
 
 -- Bootstrap lazy nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -32,14 +32,14 @@ plugins.list = {
     'rebelot/kanagawa.nvim',
     enabled = true,
     hasConfig = true,
-    description = 'Colorscheme plugin'
+    description = 'Colorscheme plugin',
   },
 
   bufferline = {
     'akinsho/bufferline.nvim',
     enabled = true,
     hasConfig = true,
-    dependencies = {'nvim-tree/nvim-web-devicons'},
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     description = 'Bufferline plugin',
   },
 
@@ -47,7 +47,7 @@ plugins.list = {
     'lukas-reineke/indent-blankline.nvim',
     enabled = true,
     hasConfig = true,
-    description = 'Indent lines plugin'
+    description = 'Indent lines plugin',
   },
 
   treesitter = {
@@ -73,7 +73,7 @@ plugins.list = {
       'BurntSushi/ripgrep',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
       },
     },
     description = 'Search plugin',
@@ -83,14 +83,14 @@ plugins.list = {
     'akinsho/toggleterm.nvim',
     enabled = true,
     hasConfig = true,
-    description = 'Temrinal plugin'
+    description = 'Temrinal plugin',
   },
 
   lf = {
     'lmburns/lf.nvim',
     enabled = true,
     hasConfig = true,
-    description = 'File manager plugin'
+    description = 'File manager plugin',
   },
 
   completion = {
@@ -107,10 +107,10 @@ plugins.list = {
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
+      'mhartington/formatter.nvim',
     },
-    description = 'Completioin plugin'
+    description = 'Completioin plugin',
   },
-
 }
 
 plugins.set = function()
@@ -132,8 +132,7 @@ plugins.set = function()
     ::continue::
   end
 
-  require("lazy").setup(list)
+  require('lazy').setup(list)
 end
-
 
 return plugins

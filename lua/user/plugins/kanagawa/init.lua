@@ -1,4 +1,3 @@
-
 require('kanagawa').setup({
   transparent = true,
   dimInactive = false,
@@ -6,9 +5,9 @@ require('kanagawa').setup({
     theme = {
       all = {
         ui = {
-          bg_gutter = "none"
-        }
-      }
-    }
-  }
+          bg_gutter = 'none',
+        },
+      },
+    },
+  },
 })

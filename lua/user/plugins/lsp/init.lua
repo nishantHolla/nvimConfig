@@ -1,4 +1,3 @@
-
 local lspconfig = require('lspconfig')
 local mason = require('mason')
 
@@ -16,56 +15,58 @@ vim.diagnostic.config({
 
 -- message popup
 vim.o.updatetime = 250
-vim.api.nvim_create_autocmd("CursorHold", {
+vim.api.nvim_create_autocmd('CursorHold', {
   buffer = bufnr,
   callback = function()
     local opts = {
       focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
       border = 'rounded',
       source = 'always',
       prefix = ' ',
       scope = 'cursor',
     }
     vim.diagnostic.open_float(nil, opts)
-  end
+  end,
 })
 
 -- line number hilight
-for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
-  vim.fn.sign_define("DiagnosticSign" .. diag, {
-    text = "",
-    texthl = "DiagnosticSign" .. diag,
-    linehl = "",
-    numhl = "DiagnosticSign" .. diag,
+for _, diag in ipairs({ 'Error', 'Warn', 'Info', 'Hint' }) do
+  vim.fn.sign_define('DiagnosticSign' .. diag, {
+    text = '',
+    texthl = 'DiagnosticSign' .. diag,
+    linehl = '',
+    numhl = 'DiagnosticSign' .. diag,
   })
 end
 
 -- servers
 lspconfig['lua_ls'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['pyright'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['tsserver'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['html'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['cssls'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['tailwindcss'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
 
 lspconfig['clangd'].setup({
-  capabilities = capabilities
+  capabilities = capabilities,
 })
+
+require('user.plugins.formatter')

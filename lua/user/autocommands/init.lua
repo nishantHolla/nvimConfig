@@ -3,7 +3,7 @@
 local autocommands = {}
 
 autocommands.groups = {
-  editing = vim.api.nvim_create_augroup('editing', {clear = true}),
+  editing = vim.api.nvim_create_augroup('editing', { clear = true }),
 }
 
 autocommands.list = {
@@ -13,13 +13,6 @@ autocommands.list = {
     command = 'set formatoptions-=cro',
     group = autocommands.groups.editing,
     description = 'Stop auto commenting',
-  },
-  {
-    event = 'BufWritePre',
-    pattern = '?*',
-    command = '%s/\\s\\+$//ge | %s/\\n\\+\\%$//ge',
-    group = autocommands.groups.editing,
-    description = 'Remove trailing whitespace and newline befor saving',
   },
   {
     event = 'BufWinLeave',
@@ -33,7 +26,9 @@ autocommands.list = {
     pattern = '?*',
     callback = function()
       local filetype = vim.bo.filetype
-      if filetype == 'gitcommit' then return end
+      if filetype == 'gitcommit' then
+        return
+      end
       vim.cmd('silent! loadview')
     end,
     group = autocommands.groups.editing,
@@ -43,11 +38,11 @@ autocommands.list = {
     event = 'LspAttach',
     callback = NvimConfig.functions.setLsp,
     group = autocommands.groups.editing,
+    description = 'Setup Lsp on attach',
   },
 }
 
 autocommands.set = function()
-
   for _, auto in pairs(autocommands.list) do
     vim.api.nvim_create_autocmd(auto.event, {
       pattern = auto.pattern,
@@ -56,7 +51,6 @@ autocommands.set = function()
       group = auto.group,
     })
   end
-
 end
 
 return autocommands
