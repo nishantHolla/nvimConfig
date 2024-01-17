@@ -2,6 +2,10 @@
 
 local functions = {}
 
+function string.starts(String,Start)
+  return string.sub(String,1,string.len(Start))==Start
+end
+
 functions.closeBuffer = function()
   local lsOutput = vim.api.nvim_command_output('ls')
   local count  = select(2, lsOutput:gsub('\n', '\n')) + 1
@@ -20,6 +24,17 @@ functions.openTelescope = function(picker)
   end
 
   vim.cmd('Telescope ' .. picker .. ' theme=ivy')
+end
+
+functions.toggleTerminal = function(id)
+  id = tostring(id)
+
+  vim.cmd(id .. 'ToggleTerm')
+
+  local name = vim.api.nvim_buf_get_name(0)
+  if string.starts(name, 'term://') then
+    vim.cmd('norm i')
+  end
 end
 
 

@@ -79,6 +79,13 @@ plugins.list = {
     description = 'Search plugin',
   },
 
+  toggleterm = {
+    'akinsho/toggleterm.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Temrinal plugin'
+  },
+
 }
 
 plugins.set = function()

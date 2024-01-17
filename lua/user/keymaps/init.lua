@@ -60,6 +60,13 @@ keymaps.list.normal = {
     {'<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', snr, 'Open telescope'},
   },
 
+  ToggleTermPlugin = {
+    plugin = 'toggleterm',
+    {'<a-`>', ':lua NvimConfig.functions.toggleTerminal(10)<cr>', snr, 'Open terminal 10'},
+    {'<a-1>', ':lua NvimConfig.functions.toggleTerminal(1)<cr>', snr, 'Open terminal 10'},
+    {'<a-2>', ':lua NvimConfig.functions.toggleTerminal(2)<cr>', snr, 'Open terminal 10'},
+  },
+
 }
 
 keymaps.list.insert = {
@@ -95,7 +102,19 @@ keymaps.list.visual = {
 
 }
 
-keymaps.list.terminal = {}
+keymaps.list.terminal = {
+  ModeMovement = {
+    {'<leader><leader>', '<c-\\><c-n>', snr, 'Move to normal mode'},
+  },
+  ---
+
+  ToggleTermPlugin = {
+    plugin = 'toggleterm',
+    {'<a-`>', '<c-\\><c-n>:lua NvimConfig.functions.toggleTerminal(10)<cr>', snr, 'Open terminal 10'},
+    {'<a-1>', '<c-\\><c-n>:lua NvimConfig.functions.toggleTerminal(1)<cr>', snr, 'Open terminal 10'},
+    {'<a-2>', '<c-\\><c-n>:lua NvimConfig.functions.toggleTerminal(2)<cr>', snr, 'Open terminal 10'},
+  },
+}
 
 
 keymaps.setMode = function(list, mode)
