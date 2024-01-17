@@ -55,7 +55,14 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     description = 'Code parser plugin',
-  }
+  },
+
+  hop = {
+    'phaazon/hop.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Motion plugin',
+  },
 
 }
 

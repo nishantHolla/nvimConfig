@@ -46,6 +46,15 @@ keymaps.list.normal = {
     {'<a-d>', ':m .-2<CR>==', snr, 'Move current line up'},
   },
 
+  ---
+
+  HopPlugin = {
+    plugin = 'hop',
+    {'<leader>f', ':HopAnywhere<cr>', snr, 'Hop anywhere in the visible region'},
+    {'f', ':HopChar1CurrentLine<cr>', snr, 'Hop in current line'},
+    {'F', 'f', snr, 'Default find'},
+  },
+
 }
 
 keymaps.list.insert = {
@@ -87,9 +96,19 @@ keymaps.list.terminal = {}
 keymaps.setMode = function(list, mode)
 
   for _, group in pairs(list) do
+    if group.plugin then
+      if NvimConfig.plugins.list[group.plugin].enabled == false then
+        goto continue
+      end
+    end
+
+    group.plugin = nil
+
     for _, map in pairs(group) do
       vim.api.nvim_set_keymap(mode, map[1], map[2], map[3])
     end
+
+    ::continue::
   end
 
 end
