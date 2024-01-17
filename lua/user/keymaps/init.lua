@@ -34,6 +34,10 @@ keymaps.list.normal = {
     {'<leader>x', 'x', snr, 'Delete character with poluting'},
   },
 
+  HighlightManagement = {
+    {'<esc>', ':nohl<cr>', snr, 'Clear higlights'},
+  },
+
   SplitMovement = {
     {'<a-h>', '<c-w>h', snr, 'Move focus to left split'},
     {'<a-j>', '<c-w>j', snr, 'Move focus to bottom split'},
@@ -45,6 +49,7 @@ keymaps.list.normal = {
     {'<a-s>', ':m .+1<CR>==', snr, 'Move current line down'},
     {'<a-d>', ':m .-2<CR>==', snr, 'Move current line up'},
   },
+
 
   ---
 
@@ -58,6 +63,12 @@ keymaps.list.normal = {
   LfPlugin = {
     plugin = 'lf',
     {'<leader>;', ':Lf<cr>', snr, 'Open lf'},
+  },
+
+  LspPlugin = {
+    plugin = 'completion',
+    {'[d', ':lua vim.diagnostic.goto_prev()<cr>', snr, 'Goto previous diagnostic'},
+    {']d', ':lua vim.diagnostic.goto_next()<cr>', snr, 'Goto next diagnostic'},
   },
 
   TelescopePlugin = {
@@ -123,6 +134,23 @@ keymaps.list.terminal = {
 }
 
 
+keymaps.setLsp = function()
+  keymaps.list.normal.Lsp = {
+    {'gD', vim.lsp.buf.declaration, snr, 'Goto declaration from LSP'},
+    {'gd', vim.lsp.buf.definition, snr, 'Goto definition from LSP'},
+    {'gi', vim.lsp.buf.implementation, snr, 'Goto implementation from LSP'},
+    {'K', vim.lsp.buf.hover, snr, 'See info from LSP'},
+    {'<c-k>', vim.lsp.buf.signature_help, snr, 'See signature from LSP'},
+    {'<leader>lD', vim.lsp.buf.type_definition, snr, 'Type definitions from LSP'},
+    {'<leader>lrn', vim.lsp.buf.rename, snr, 'Type definitions from LSP'},
+    {'<leader>lca', vim.lsp.buf.code_action, snr, 'Code actions from LSP'},
+    {'<leader>lwa', vim.lsp.buf.add_workspace_folder, snr, 'Add workspace folder for LSP'},
+    {'<leader>lwd', vim.lsp.buf.remove_workspace_folder, snr, 'Add workspace folder for LSP'},
+  }
+
+  keymaps.setMode({Lsp = keymaps.list.normal.Lsp}, 'n')
+end
+
 keymaps.setMode = function(list, mode)
 
   for _, group in pairs(list) do
@@ -135,7 +163,7 @@ keymaps.setMode = function(list, mode)
     group.plugin = nil
 
     for _, map in pairs(group) do
-      vim.api.nvim_set_keymap(mode, map[1], map[2], map[3])
+      vim.keymap.set(mode, map[1], map[2], map[3])
     end
 
     ::continue::

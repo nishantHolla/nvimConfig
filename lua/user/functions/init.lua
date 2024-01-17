@@ -37,5 +37,9 @@ functions.toggleTerminal = function(id)
   end
 end
 
+functions.setLsp = function(ev)
+  vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+  NvimConfig.keymaps.setLsp()
+end
 
 return functions
