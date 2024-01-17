@@ -25,8 +25,15 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    description = 'Statusline plugin'
+    description = 'Statusline plugin',
   },
+
+  material = {
+    'marko-cerovac/material.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Colorscheme plugin'
+  }
 
 }
 
@@ -49,7 +56,6 @@ plugins.set = function()
     ::continue::
   end
 
-  print(#list)
   require("lazy").setup(list)
 end
 
