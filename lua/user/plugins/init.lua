@@ -28,8 +28,8 @@ plugins.list = {
     description = 'Statusline plugin',
   },
 
-  material = {
-    'marko-cerovac/material.nvim',
+  kanagawa = {
+    'rebelot/kanagawa.nvim',
     enabled = true,
     hasConfig = true,
     description = 'Colorscheme plugin'
