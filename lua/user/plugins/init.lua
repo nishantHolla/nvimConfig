@@ -33,6 +33,13 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     description = 'Colorscheme plugin'
+  },
+
+  treesitter = {
+    'nvim-treesitter/nvim-treesitter',
+    enabled = true,
+    hasConfig = true,
+    description = 'Code parser plugin',
   }
 
 }
