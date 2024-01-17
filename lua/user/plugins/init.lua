@@ -35,6 +35,13 @@ plugins.list = {
     description = 'Colorscheme plugin'
   },
 
+  bufferline = {
+    'akinsho/bufferline.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Bufferline plugin',
+  },
+
   treesitter = {
     'nvim-treesitter/nvim-treesitter',
     enabled = true,
