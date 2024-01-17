@@ -86,6 +86,13 @@ plugins.list = {
     description = 'Temrinal plugin'
   },
 
+  lf = {
+    'lmburns/lf.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'File manager'
+  },
+
 }
 
 plugins.set = function()

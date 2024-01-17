@@ -55,6 +55,11 @@ keymaps.list.normal = {
     {'F', 'f', snr, 'Default find'},
   },
 
+  LfPlugin = {
+    plugin = 'lf',
+    {'<leader>;', ':Lf<cr>', snr, 'Open lf'},
+  },
+
   TelescopePlugin = {
     plugin = 'telescope',
     {'<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', snr, 'Open telescope'},
@@ -66,6 +71,7 @@ keymaps.list.normal = {
     {'<a-1>', ':lua NvimConfig.functions.toggleTerminal(1)<cr>', snr, 'Open terminal 10'},
     {'<a-2>', ':lua NvimConfig.functions.toggleTerminal(2)<cr>', snr, 'Open terminal 10'},
   },
+
 
 }
 
