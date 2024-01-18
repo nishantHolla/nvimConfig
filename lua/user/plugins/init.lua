@@ -125,6 +125,20 @@ plugins.list = {
     hasConfig = true,
     description = 'Autoclose html tags',
   },
+
+  comment = {
+    'numToStr/Comment.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Comment plugin',
+  },
+
+  lspsaga = {
+    'nvimdev/lspsaga.nvim',
+    enabled = true,
+    hasConfig = true,
+    description = 'Lsp enhancer plugin',
+  },
 }
 
 plugins.set = function()

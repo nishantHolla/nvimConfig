@@ -136,14 +136,23 @@ keymaps.setLsp = function()
     { 'gi', vim.lsp.buf.implementation, snr, 'Goto implementation from LSP' },
     { 'K', vim.lsp.buf.hover, snr, 'See info from LSP' },
     { '<c-k>', vim.lsp.buf.signature_help, snr, 'See signature from LSP' },
-    { '<leader>lD', vim.lsp.buf.type_definition, snr, 'Type definitions from LSP' },
-    { '<leader>lrn', vim.lsp.buf.rename, snr, 'Type definitions from LSP' },
-    { '<leader>lca', vim.lsp.buf.code_action, snr, 'Code actions from LSP' },
     { '<leader>lwa', vim.lsp.buf.add_workspace_folder, snr, 'Add workspace folder for LSP' },
     { '<leader>lwd', vim.lsp.buf.remove_workspace_folder, snr, 'Add workspace folder for LSP' },
   }
 
+  keymaps.list.normal.Lspsaga = {
+    { '<leader>lca', ':Lspsaga code_action<cr>', snr, 'Code actions from LSPsaga' },
+    { '<leader>ld', ':Lspsaga peek_definition<cr>', snr, 'Peek definitions from LSPsaga' },
+    { '<leader>lD', ':Lspsaga peek_type_definition<cr>', snr, 'Peek definitions from LSPsaga' },
+    { '<leader>l[', ':Lspsaga diagnostic_jump_prev<cr>', snr, 'Goto previous diagnostic from LSPsaga' },
+    { '<leader>l]', ':Lspsaga diagnostic_jump_next<cr>', snr, 'Goto next diagnostic from LSPsaga' },
+    { '<leader>lf', ':Lspsaga finder<cr>', snr, 'Finder from LSPsaga' },
+    { '<leader>lrn', ':Lspsaga rename<cr>', snr, 'Type rename from LSPsaga' },
+    { '<leader>lo', ':Lspsaga outline<cr>', snr, 'Outline from LSPsaga' },
+  }
+
   keymaps.setMode({ Lsp = keymaps.list.normal.Lsp }, 'n')
+  keymaps.setMode({ LspsagaPlugin = keymaps.list.normal.Lspsaga }, 'n')
 end
 
 keymaps.setMode = function(list, mode)
