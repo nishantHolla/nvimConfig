@@ -1,6 +1,11 @@
 local cmp = require('cmp')
 
+require('tailwindcss-colorizer-cmp').setup({
+  color_square_width = 2,
+})
+
 cmp.setup({
+  format = require('tailwindcss-colorizer-cmp').formatter,
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)

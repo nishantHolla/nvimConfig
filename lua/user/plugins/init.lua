@@ -108,6 +108,7 @@ plugins.list = {
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
       'mhartington/formatter.nvim',
+      'roobert/tailwindcss-colorizer-cmp.nvim',
     },
     description = 'Completioin plugin',
   },
@@ -138,6 +139,13 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     description = 'Lsp enhancer plugin',
+  },
+
+  colorizer = {
+    'NvChad/nvim-colorizer.lua',
+    enabled = true,
+    hasConfig = true,
+    description = 'Colorizer plugin',
   },
 }
 
