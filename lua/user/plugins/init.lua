@@ -111,6 +111,20 @@ plugins.list = {
     },
     description = 'Completioin plugin',
   },
+
+  autopair = {
+    'windwp/nvim-autopairs',
+    enabled = true,
+    hasConfig = true,
+    description = 'Autopair plugin',
+  },
+
+  autoclose = {
+    'windwp/nvim-ts-autotag',
+    enabled = true,
+    hasConfig = true,
+    description = 'Autoclose html tags',
+  },
 }
 
 plugins.set = function()
