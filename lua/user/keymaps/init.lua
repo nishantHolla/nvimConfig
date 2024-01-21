@@ -15,7 +15,7 @@ keymaps.list.normal = {
 
   BufferManagement = {
     { '<leader>SS', ':w<cr>', snr, 'Write current buffer without formatting' },
-    { '<leader>ss', ':w | FormatWrite<cr>', snr, 'Write current buffer' },
+    { '<leader>ss', ':w<cr>', snr, 'Write current buffer' },
     { '<leader>sa', ':wa<cr>', snr, 'Write all open buffer' },
     { '<leader>qq', ':lua NvimConfig.functions.closeBuffer()<cr>', snr, 'Close current buffer' },
     { '<leader>qa', ':qa<cr>', snr, 'Close all open buffer' },
@@ -142,6 +142,8 @@ keymaps.setLsp = function()
 
   keymaps.list.normal.Lspsaga = {
     { '<leader>lca', ':Lspsaga code_action<cr>', snr, 'Code actions from LSPsaga' },
+    { '<leader>lb', ':Lspsaga show_buf_diagnostics<cr>', snr, 'Buffer diagnostics from LSPsaga' },
+    { '<leader>lw', ':Lspsaga show_workspace_diagnostics<cr>', snr, 'Workspace diagnostics from LSPsaga' },
     { '<leader>ld', ':Lspsaga peek_definition<cr>', snr, 'Peek definitions from LSPsaga' },
     { '<leader>lD', ':Lspsaga peek_type_definition<cr>', snr, 'Peek definitions from LSPsaga' },
     { '<leader>l[', ':Lspsaga diagnostic_jump_prev<cr>', snr, 'Goto previous diagnostic from LSPsaga' },
@@ -166,6 +168,7 @@ keymaps.setMode = function(list, mode)
     group.plugin = nil
 
     for _, map in pairs(group) do
+      map[3].desc = map[4]
       vim.keymap.set(mode, map[1], map[2], map[3])
     end
 

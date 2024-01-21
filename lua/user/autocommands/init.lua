@@ -40,6 +40,13 @@ autocommands.list = {
     group = autocommands.groups.editing,
     description = 'Setup Lsp on attach',
   },
+  {
+    event = 'BufWinEnter',
+    pattern = '?*.tpp',
+    command = 'set filetype=cpp',
+    group = autocommands.groups.editing,
+    description = 'Consider tpp files as cpp files',
+  },
 }
 
 autocommands.set = function()

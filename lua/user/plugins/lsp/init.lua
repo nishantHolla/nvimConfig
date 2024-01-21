@@ -69,4 +69,5 @@ lspconfig['clangd'].setup({
   capabilities = capabilities,
 })
 
-require('user.plugins.formatter')
+-- formatter
+require('user.plugins.conform')

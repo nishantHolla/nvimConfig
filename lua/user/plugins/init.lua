@@ -107,7 +107,7 @@ plugins.list = {
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
-      'mhartington/formatter.nvim',
+      'stevearc/conform.nvim',
       'roobert/tailwindcss-colorizer-cmp.nvim',
     },
     description = 'Completioin plugin',
@@ -146,6 +146,15 @@ plugins.list = {
     enabled = true,
     hasConfig = true,
     description = 'Colorizer plugin',
+  },
+
+  tailwindSorter = {
+    'laytan/tailwind-sorter.nvim',
+    enabled = true,
+    hasConfig = true,
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+    build = 'cd formatter && npm i && npm run build',
+    description = 'Tailwind class sorter plugin',
   },
 }
 
