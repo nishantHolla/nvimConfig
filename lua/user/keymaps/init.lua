@@ -14,7 +14,7 @@ local s = keymaps.s
 keymaps.list.normal = {
 
   BufferManagement = {
-    { '<leader>SS', ':w<cr>', snr, 'Write current buffer without formatting' },
+    { '<leader>SS', ':FormatDisable<cr>:w<cr>:FormatEnable<cr>', snr, 'Write current buffer without formatting' },
     { '<leader>ss', ':w<cr>', snr, 'Write current buffer' },
     { '<leader>sa', ':wa<cr>', snr, 'Write all open buffer' },
     { '<leader>qq', ':lua NvimConfig.functions.closeBuffer()<cr>', snr, 'Close current buffer' },
