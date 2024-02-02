@@ -69,5 +69,9 @@ lspconfig['clangd'].setup({
   capabilities = capabilities,
 })
 
+lspconfig['prismals'].setup({
+  capabilities = capabilities,
+})
+
 -- formatter
 require('user.plugins.conform')
