@@ -93,6 +93,13 @@ plugins.list = {
     description = 'File manager plugin',
   },
 
+  indentation = {
+    'tpope/vim-sleuth',
+    enabled = true,
+    hasConfig = false,
+    description = 'Indentation guesser',
+  },
+
   completion = {
     'hrsh7th/nvim-cmp',
     enabled = true,
