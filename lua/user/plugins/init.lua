@@ -122,9 +122,9 @@ plugins.list = {
   },
 
   autopair = {
-    'windwp/nvim-autopairs',
+    'jiangmiao/auto-pairs',
     enabled = true,
-    hasConfig = true,
+    hasConfig = false,
     description = 'Autopair plugin',
   },
 
