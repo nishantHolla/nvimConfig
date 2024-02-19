@@ -33,6 +33,7 @@ keymaps.list.normal = {
     { '<leader>d', 'd', snr, 'Delete with poluting' },
     { '<leader>c', 'c', snr, 'Change with poluting' },
     { '<leader>x', 'x', snr, 'Delete character with poluting' },
+    { '<leader>y', '"+y', snr, 'Copy to primary clipboard' },
   },
 
   HighlightManagement = {
@@ -71,9 +72,12 @@ keymaps.list.normal = {
     { ']d', ':lua vim.diagnostic.goto_next()<cr>', snr, 'Goto next diagnostic' },
   },
 
-  TelescopePlugin = {
-    plugin = 'telescope',
-    { '<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', snr, 'Open telescope' },
+  FzfPlugin = {
+    plugin = 'fzf',
+    { '<leader><space>', ':FzfLua<cr>', snr, 'Open fzf lua' },
+    { '<leader>o', ':FzfLua git_files<cr>', snr, 'Open fzf lua git files' },
+    { '<leader><a-o>', ':FzfLua files<cr>', snr, 'Open fzf lua files' },
+    { '<leader>O', ':FzfLua files cwd=~<cr>', snr, 'Open fzf lua files global' },
   },
 
   ToggleTermPlugin = {
@@ -107,6 +111,7 @@ keymaps.list.visual = {
     { '<leader>d', 'd', snr, 'Delete with poluting' },
     { '<leader>c', 'c', snr, 'Change with poluting' },
     { '<leader>x', 'x', snr, 'Delete character with poluting' },
+    { '<leader>y', '"+y', snr, 'Copy to primary clipboard' },
   },
 
   TextMovement = {

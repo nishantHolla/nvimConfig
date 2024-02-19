@@ -64,19 +64,12 @@ plugins.list = {
     description = 'Motion plugin',
   },
 
-  telescope = {
-    'nvim-telescope/telescope.nvim',
+  fzf = {
+    'ibhagwan/fzf-lua',
     enabled = true,
     hasConfig = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'BurntSushi/ripgrep',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
-      },
-    },
-    description = 'Search plugin',
+    description = 'fzf',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   toggleterm = {
